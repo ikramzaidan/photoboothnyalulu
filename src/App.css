@@ -1,0 +1,36 @@
+.reenie-beanie-regular {
+    font-family: "Reenie Beanie", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+  
+.dm-sans {
+    font-family: "DM Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+.shadows-into-light-regular {
+    font-family: "Shadows Into Light", cursive;
+    font-weight: 400;
+    font-style: normal;
+}  
+
+.text-shadow {
+    text-shadow: none;
+    transition-duration: 100ms;
+    transition-timing-function: ease-in-out;
+}
+.text-shadow:hover {
+    text-shadow: 2px 2px 2px #575757;
+}
+
+.navbrand-sup {
+    visibility: hidden;
+    transition: visibility 0.4s ease, opacity 0.3s ease;
+    opacity: 0;
+}
+.navbrand:hover .navbrand-sup {
+    visibility: visible;
+    opacity: 1;
+}
