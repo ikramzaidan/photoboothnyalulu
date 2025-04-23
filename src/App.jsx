@@ -55,7 +55,7 @@ function App() {
           <button className="dm-sans font-light text-xl border border-black px-5 py-2 hover:bg-white" onClick={() => setIsBoothOpen(true)}>Start</button>
         </div>
       )}
-      <div className={`w-full px-10 pb-5 ${isBoothOpen && capturedImages.length !== 0 && capturedImages.length === photoRows  ? '' : 'fixed z-10 bottom-0'}`}>
+      <div className={`w-full px-10 pb-5 ${isBoothOpen && capturedImages.length !== 0 && capturedImages.length === photoRows  ? 'lg:fixed z-10 lg:bottom-0' : 'fixed z-10 bottom-0'}`}>
         <div className="flex justify-center items-center">
           <span className="reenie-beanie-regular text-lg">copyright 2025, made with love</span>
         </div>
