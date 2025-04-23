@@ -16,10 +16,10 @@ function App() {
 
   return (
     <div className="flex flex-1 flex-col min-h-screen lg:max-h-screen lg:justify-center bg-pink-50">
-      <div className="w-full fixed z-10 top-0 px-10 py-3">
+      <div className="w-full fixed z-10 top-0 px-10 py-3 pt-5 lg:pt-3">
         <div className="flex flex-grow items-center justify-center">
           <div className="flex items-start gap-1 navbrand ml-3">
-            <div className="reenie-beanie-regular text-3xl cursor-pointer text-shadow" onClick={resetBooth}>Photooboth nya Lulu</div>
+            <div className="reenie-beanie-regular text-4xl lg:text-3xl cursor-pointer text-shadow" onClick={resetBooth}>Photooboth nya Lulu</div>
             <div className="text-xs navbrand-sup">❤︎</div>
           </div>
         </div>

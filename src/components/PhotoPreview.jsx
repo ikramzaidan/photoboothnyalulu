@@ -162,7 +162,7 @@ const PhotoPreview = ({ capturedImages, photoRows }) => {
                 </div>
                 <div className="flex flex-col gap-3">
                     <h2>Sticker</h2>
-                    <div className="flex gap-3">
+                    <div className="flex flex-wrap gap-3">
                         <button onClick={() => setSelectedFrame("none")} className={`dm-sans font-light border border-black px-3 py-2 hover:bg-white ${selectedFrame === "none" ? "bg-white" : ""}`}>No Stickers</button>
                         <button onClick={() => setSelectedFrame("firstSticker")} className={`dm-sans font-light border border-black px-3 py-2 hover:bg-white ${selectedFrame === "firstSticker" ? "bg-white" : ""}`}>Sticker 1</button>
                         <button onClick={() => setSelectedFrame("secondSticker")} className={`dm-sans font-light border border-black px-3 py-2 hover:bg-white ${selectedFrame === "secondSticker" ? "bg-white" : ""}`}>Sticker 2</button>
