@@ -181,6 +181,9 @@ const PhotoPreview = ({ capturedImages, photoRows }) => {
                     />
                     <label htmlFor="timestamp" className="dm-sans text-sm">Tampilkan Timestamp</label>
                 </div>
+                <div className="shadows-into-light-regular text-xs text-center lg:text-start">
+                We do not track, collect, or store any personal data. All photos taken are processed locally on your device and are not uploaded or saved to any external server.
+                </div>
 
             </div>
 
