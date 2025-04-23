@@ -134,13 +134,6 @@ const PhotoBooth = ({ setCapturedImages, photoRows }) => {
         if (video && canvas) {
             const context = canvas.getContext("2d");
 
-            console.log("Device Info:", {
-                userAgent: navigator.userAgent,
-                platform: navigator.platform,
-                touchPoints: navigator.maxTouchPoints,
-                isMobile
-            });
-
             const targetWidth = 1280;
             const targetHeight = 720;
 
