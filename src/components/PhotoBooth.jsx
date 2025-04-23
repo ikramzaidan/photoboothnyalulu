@@ -10,7 +10,7 @@ const PhotoBooth = ({ setCapturedImages, photoRows }) => {
     const [countdown, setCountdown] = useState(null);
     const [capturing, setCapturing] = useState(false);
     const [countdownTime, setCountdownTime] = useState(3);
-    const [stream, setStream] = useState(null);
+    // const [stream, setStream] = useState(null);
 
     const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
@@ -44,7 +44,6 @@ const PhotoBooth = ({ setCapturedImages, photoRows }) => {
             if (videoRef.current) {
                 videoRef.current.srcObject = stream;
 
-                // Tambahkan ini untuk memastikan video sudah siap
                 videoRef.current.onloadedmetadata = async () => {
                     try {
                         await videoRef.current.play();

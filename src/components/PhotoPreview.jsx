@@ -13,6 +13,8 @@ const drawFrame = (ctx, canvas, frameSrc) => {
 const frames = {
     none: null,
     firstSticker: "/sticker-1.png",
+    secondSticker: "/sticker-2.png",
+    thirdSticker: "/sticker-3.png",
 };
 
 const PhotoPreview = ({ capturedImages, photoRows }) => {
@@ -67,7 +69,7 @@ const PhotoPreview = ({ capturedImages, photoRows }) => {
             if (timestamp) {
                 ctx.font = "20px DM Sans";
                 ctx.textAlign = "center";
-                ctx.fillText(dateString, canvas.width / 2, canvas.height - paddingBottom);
+                ctx.fillText(dateString, canvas.width / 2, canvas.height - paddingBottom * 1.25);
             }
         };
 
@@ -161,6 +163,8 @@ const PhotoPreview = ({ capturedImages, photoRows }) => {
                     <div className="flex gap-3">
                         <button onClick={() => setSelectedFrame("none")} className={`dm-sans font-light border border-black px-3 py-2 hover:bg-white ${selectedFrame === "none" ? "bg-white" : ""}`}>No Stickers</button>
                         <button onClick={() => setSelectedFrame("firstSticker")} className={`dm-sans font-light border border-black px-3 py-2 hover:bg-white ${selectedFrame === "firstSticker" ? "bg-white" : ""}`}>Sticker 1</button>
+                        <button onClick={() => setSelectedFrame("secondSticker")} className={`dm-sans font-light border border-black px-3 py-2 hover:bg-white ${selectedFrame === "secondSticker" ? "bg-white" : ""}`}>Sticker 2</button>
+                        <button onClick={() => setSelectedFrame("thirdSticker")} className={`dm-sans font-light border border-black px-3 py-2 hover:bg-white ${selectedFrame === "thirdSticker" ? "bg-white" : ""}`}>Sticker 3</button>
                     </div>
                 </div>
                 <div className="flex flex-col mt-8">
