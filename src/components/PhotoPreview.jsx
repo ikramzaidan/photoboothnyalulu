@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState, useCallback } from "react";
+import { IoAddSharp, IoDownloadSharp } from "react-icons/io5";
 
 /* Frame Drawing Function */
 const drawFrame = (ctx, canvas, frameSrc) => {
@@ -22,6 +23,7 @@ const PhotoPreview = ({ capturedImages, photoRows }) => {
     const [stripColor, setStripColor] = useState("white");
     const [selectedFrame, setSelectedFrame] = useState("none");
     const [timestamp, setTimestamp] = useState(false);
+    const [showPopup, setShowPopup] = useState(false);
 
     const generatePhotoStrip = useCallback(() => {
         const canvas = stripCanvasRef.current;
@@ -159,17 +161,18 @@ const PhotoPreview = ({ capturedImages, photoRows }) => {
                     </div>
                 </div>
                 <div className="flex flex-col gap-3">
-                    <h2>Stiker</h2>
+                    <h2>Sticker</h2>
                     <div className="flex gap-3">
                         <button onClick={() => setSelectedFrame("none")} className={`dm-sans font-light border border-black px-3 py-2 hover:bg-white ${selectedFrame === "none" ? "bg-white" : ""}`}>No Stickers</button>
                         <button onClick={() => setSelectedFrame("firstSticker")} className={`dm-sans font-light border border-black px-3 py-2 hover:bg-white ${selectedFrame === "firstSticker" ? "bg-white" : ""}`}>Sticker 1</button>
                         <button onClick={() => setSelectedFrame("secondSticker")} className={`dm-sans font-light border border-black px-3 py-2 hover:bg-white ${selectedFrame === "secondSticker" ? "bg-white" : ""}`}>Sticker 2</button>
                         <button onClick={() => setSelectedFrame("thirdSticker")} className={`dm-sans font-light border border-black px-3 py-2 hover:bg-white ${selectedFrame === "thirdSticker" ? "bg-white" : ""}`}>Sticker 3</button>
+                        <button onClick={() => setShowPopup(true)} className={`flex items-center gap-1 dm-sans font-light border border-black px-3 py-2 hover:bg-white`}><IoAddSharp /> Add your own</button>
                     </div>
                 </div>
                 <div className="flex flex-col mt-8">
                     <div className="flex gap-3">
-                        <button onClick={downloadPhotoStrip} className="dm-sans font-light border border-black px-3 py-2 hover:bg-white">Download Photo Strip</button>
+                        <button onClick={downloadPhotoStrip} className="flex items-center gap-1 dm-sans font-light border border-black px-3 py-2 hover:bg-white"><IoDownloadSharp /> Download Photo Strip</button>
                     </div>
                 </div>
                 <div className="flex items-center gap-2 mt-4">
@@ -179,11 +182,21 @@ const PhotoPreview = ({ capturedImages, photoRows }) => {
                         checked={timestamp}
                         onChange={() => setTimestamp(!timestamp)}
                     />
-                    <label htmlFor="timestamp" className="dm-sans text-sm">Tampilkan Timestamp</label>
+                    <label htmlFor="timestamp" className="dm-sans text-sm">Timestamp</label>
                 </div>
                 <div className="shadows-into-light-regular text-xs text-center lg:text-start">
                 We do not track, collect, or store any personal data. All photos taken are processed locally on your device and are not uploaded or saved to any external server.
                 </div>
+
+                {showPopup && (
+                <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex items-center justify-center">
+                    <div className="bg-white p-6 shadow-md">
+                    <p className="shadows-into-light-regular text-lg">Oops! We're still working on this feature.</p>
+                    <button onClick={() => setShowPopup(false)} className="mt-4 border border-black px-3 py-2 text-black shadows-into-light-regular hover:bg-slate-50">Close</button>
+                    </div>
+                </div>
+                )}
+
 
             </div>
 
